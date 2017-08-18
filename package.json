@@ -1,5 +1,6 @@
 {
   "name": "react-redux-gallery",
+  "homepage" : "http://maddumajohnerick.github.io/react-redux-gallery",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
