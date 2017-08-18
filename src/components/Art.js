@@ -1,28 +1,44 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
-class Home extends Component {
+class Art extends Component {
+  likeArt(event) {
+    event.preventDefault();
+
+    const { artsActions, art } = this.props;
+    art.liked = !art.liked;
+
+    artsActions.editArtsSuccess(art);
+  }
+
   componentDidMount() {
-
+    setInterval(() => {
+      this.forceUpdate();
+    }, 1000);
   }
 
   render() {
     const { art } = this.props;
 
     return (
-      <div className="col-md-3">
-        <div className="col-md-12 art-container">
-          {/* <img src={art ? art.src : ''} /> */}
-          <div className="image-container" style={{ backgroundImage: `url(${art ? art.src : ''})`}}>
-            <div className="info-container">
-              <div className="text-holder">
-                {art.title}
+      <Link to={`/view/${art._id}`}>
+        <div className="col-md-3" id={art._id}>
+          <div className="col-md-12 art-container">
+            <div className="image-container" style={{ backgroundImage: `url(${art ? art.src : ''})`}}>
+              <div className="info-container">
+                <div className="text-holder">
+                  {art.title}
+                </div>
+                <div className={`like-holder ${art.liked ? 'liked' : ''}`}>
+                  <i className="fa fa-heart" aria-hidden="true" onClick={this.likeArt.bind(this)}></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     );
   }
 }
 
-export default Home;
+export default Art;

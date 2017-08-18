@@ -8,6 +8,9 @@ export default function artsReducer(
       return Object.assign({}, state, { byIds: Object.assign({}, state.byIds, action.arts.byIds), allIds: action.arts.allIds });
 
     case 'EDIT_ART_SUCCESS': {
+      console.log('reducer', Object.assign({}, state, {
+        byIds: Object.assign({}, state.byIds, artObj),
+      }));
       artObj[action.art._id] = action.art;
       return Object.assign({}, state, {
         byIds: Object.assign({}, state.byIds, artObj),

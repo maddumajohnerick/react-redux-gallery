@@ -1,6 +1,11 @@
 body{
   background-color: #E0E0E0;
   font-family: 'Share Tech Mono', monospace;
+  font-size: 2rem;
+}
+
+h1{
+  font-size: 4rem;
 }
 
 .site-header{
@@ -14,7 +19,7 @@ body{
   min-height: 250px;
   padding: 0;
   margin-bottom: 25px;
-  transition: .3s;
+  transition: .5s;
 }
 
 .image-container{
@@ -25,6 +30,7 @@ body{
   filter: grayscale(100%);
 }
 
+/*.image-container{*/
 .image-container:hover{
   -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
   filter: grayscale(0%);
@@ -36,13 +42,34 @@ body{
   position: absolute;
   color: rgba(255,255,2525,0);
   background-color: transparent;
-  transition: .3s;
+  transition: .5s;
 }
 
 .text-holder{
+  width: calc(100% - 61px);
   margin: 5px;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
+.like-holder{
+  text-align: right;
+  width: 40px;
+  margin: 5px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.like-holder.liked{
+  color: transparent;
+}
+
+.art-container:hover .like-holder.liked{
+  color: red;
+  opacity: .9;
+}
+
+/*.art-container .info-container{*/
 .art-container:hover .info-container{
   color: rgba(255,255,2525,1);
   background-color: rgba(0,0,0,.5);

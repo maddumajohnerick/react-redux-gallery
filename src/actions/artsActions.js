@@ -5,6 +5,10 @@ export function getArtsSuccess(arts) {
   return { type: 'FIND_ARTS_SUCCESS', arts };
 }
 
+export function editArtsSuccess(art) {
+  return { type: 'EDIT_ART_SUCCESS', art };
+}
+
 export function getArts() {
   return function (dispatch) {
     axios({
