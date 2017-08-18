@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Art from '../containers/ArtContainer'
+
 class Home extends Component {
   componentDidMount() {
     const { artsActions } = this.props;
@@ -8,9 +10,15 @@ class Home extends Component {
   }
 
   render() {
+    const { arts } = this.props;
+
     return (
-      <div className="Home">
-        Home
+      <div className="row">
+        {arts && arts.length ?
+          arts.map(art => <Art key={art} _id={art}/>)
+          :
+          ''
+        }
       </div>
     );
   }

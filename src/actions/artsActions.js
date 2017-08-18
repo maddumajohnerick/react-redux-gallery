@@ -1,8 +1,8 @@
 import axios from 'axios';
 import _ from 'lodash';
 
-export function getArtsSuccess(sites) {
-  return { type: 'FIND_ARTS_SUCCESS', sites };
+export function getArtsSuccess(arts) {
+  return { type: 'FIND_ARTS_SUCCESS', arts };
 }
 
 export function getArts() {
@@ -18,7 +18,7 @@ export function getArts() {
         byIds,
       };
 
-      console.log(resObj);
+      dispatch(getArtsSuccess(resObj));
     });
   };
 
