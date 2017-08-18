@@ -5,7 +5,7 @@ export default function artsReducer(
   const artObj = {};
   switch (action.type) {
     case 'FIND_ARTS_SUCCESS':
-      return Object.assign({}, state, { byIds: Object.assign({}, state.byIds, action.arts.byIds), allIds: action.arts.allIds });
+      return Object.assign({}, state, { byIds: Object.assign({}, action.arts.byIds, state.byIds), allIds: action.arts.allIds });
 
     case 'EDIT_ART_SUCCESS': {
       console.log('reducer', Object.assign({}, state, {

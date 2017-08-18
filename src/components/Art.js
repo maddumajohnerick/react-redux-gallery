@@ -12,15 +12,15 @@ class Art extends Component {
     artsActions.editArtsSuccess(art);
   }
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.forceUpdate();
-    }, 500);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  // componentDidMount() {
+  //   this.interval = setInterval(() => {
+  //     this.forceUpdate();
+  //   }, 500);
+  // }
+  //
+  // componentWillUnmount() {
+  //   clearInterval(this.interval);
+  // }
 
   render() {
     const { art } = this.props;
