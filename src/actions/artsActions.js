@@ -12,8 +12,8 @@ export function editArtsSuccess(art) {
 export function getArts() {
   return function (dispatch) {
     axios({
-      method:'get',
-      url:'https://arcane-dusk-64804.herokuapp.com/deviant-works',
+      method: 'get',
+      url: 'https://arcane-dusk-64804.herokuapp.com/deviant-works',
     })
     .then(function(response) {
       const byIds = _.mapKeys(response.data, '_id');
@@ -28,6 +28,20 @@ export function getArts() {
 
 }
 
-export function getArt() {
+export function getArt(id) {
+  return function (dispatch) {
+    axios({
+      method: 'get',
+      url: `https://arcane-dusk-64804.herokuapp.com/deviant-works/${id}`,
+    })
+    .then(function(response) {
+      const byIds = _.mapKeys(response.data, '_id');
+      const resObj = {
+        allIds: Object.keys(byIds),
+        byIds,
+      };
 
+      dispatch(getArtsSuccess(resObj));
+    });
+  };
 }

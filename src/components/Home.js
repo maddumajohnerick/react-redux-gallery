@@ -12,15 +12,18 @@ class Home extends Component {
   render() {
     const { arts } = this.props;
 
-    return (
-      <div className="row">
-        {arts && arts.length ?
-          arts.map(art => <Art key={art} _id={art}/>)
-          :
-          ''
-        }
-      </div>
-    );
+    if (arts && arts.length) {
+      return (
+        <div className="row">
+          {arts && arts.length ?
+            arts.map(art => <Art key={art} _id={art}/>)
+            :
+            ''
+          }
+        </div>
+      );
+    }
+    return <h2>Loading..</h2>
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+
 class Art extends Component {
   likeArt(event) {
     event.preventDefault();
@@ -12,9 +13,13 @@ class Art extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.forceUpdate();
-    }, 1000);
+    }, 500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {

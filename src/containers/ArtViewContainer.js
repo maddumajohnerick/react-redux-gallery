@@ -4,9 +4,10 @@ import ArtView from '../components/ArtView';
 import * as artsActions from '../actions/artsActions';
 
 function mapStateToProps(state, ownProps) {
-  const artId = ownProps.artId;
+  const artId = ownProps.params.artId;
 
   return {
+    artId,
     art: state.arts.byIds ? state.arts.byIds[artId] || null : null,
   };
 }
