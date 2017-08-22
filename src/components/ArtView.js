@@ -43,6 +43,8 @@ class ArtView extends Component {
               Back
             </Link>
           </div>
+          <br />
+          <br />
         </div>
       );
     }

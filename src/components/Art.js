@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
+import $ from 'jquery';
 
 class Art extends Component {
   likeArt(event) {
@@ -13,6 +13,10 @@ class Art extends Component {
   }
 
   componentDidMount() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $('.art-container').addClass('in-mobile');
+    }
+
     this.interval = setInterval(() => {
       this.forceUpdate();
     }, 500);

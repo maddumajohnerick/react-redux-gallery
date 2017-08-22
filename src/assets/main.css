@@ -30,6 +30,10 @@ h1{
   filter: grayscale(100%);
 }
 
+img.img-responsive {
+  width: 100%;
+}
+
 /*.image-container{*/
 .image-container:hover{
   -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
@@ -71,6 +75,16 @@ h1{
 
 /*.art-container .info-container{*/
 .art-container:hover .info-container{
+  color: rgba(255,255,2525,1);
+  background-color: rgba(0,0,0,.5);
+}
+
+.art-container.in-mobile .image-container{
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+}
+
+.art-container.in-mobile .info-container{
   color: rgba(255,255,2525,1);
   background-color: rgba(0,0,0,.5);
 }
