@@ -12,15 +12,15 @@ class Art extends Component {
     artsActions.editArtsSuccess(art);
   }
 
-  // componentDidMount() {
-  //   this.interval = setInterval(() => {
-  //     this.forceUpdate();
-  //   }, 500);
-  // }
-  //
-  // componentWillUnmount() {
-  //   clearInterval(this.interval);
-  // }
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.forceUpdate();
+    }, 500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   render() {
     const { art } = this.props;
@@ -34,8 +34,8 @@ class Art extends Component {
                 <div className="text-holder">
                   {art.title}
                 </div>
-                <div className={`like-holder ${art.liked ? 'liked' : ''}`}>
-                  <i className="fa fa-heart" aria-hidden="true" onClick={this.likeArt.bind(this)}></i>
+                <div className={`like-holder ${art.liked ? 'liked' : ''}`} onClick={this.likeArt.bind(this)}>
+                  <i className="fa fa-heart" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
