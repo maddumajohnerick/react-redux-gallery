@@ -88,3 +88,8 @@ img.img-responsive {
   color: rgba(255,255,2525,1);
   background-color: rgba(0,0,0,.5);
 }
+
+.art-container.in-mobile .like-holder.liked{
+  color: red;
+  opacity: .9;
+}
