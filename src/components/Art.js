@@ -16,18 +16,10 @@ class Art extends Component {
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       $('.art-container').addClass('in-mobile');
     }
-
-    this.interval = setInterval(() => {
-      this.forceUpdate();
-    }, 500);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   render() {
-    const { art } = this.props;
+    let { art } = this.props;
 
     return (
       <Link to={`/view/${art._id}`}>
