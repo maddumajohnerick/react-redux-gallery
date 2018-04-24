@@ -27,7 +27,7 @@ class ArtView extends Component {
       return (
         <div className="row">
           <div className="col-md-5">
-            <img src={art.src} className="img-responsive"/>
+            <img src={art.src} className="img-responsive" alt={art.src}/>
           </div>
           <div className="col-md-7">
             <h2>{art.title}</h2>
